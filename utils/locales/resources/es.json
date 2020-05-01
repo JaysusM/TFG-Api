@@ -1,0 +1,36 @@
+{
+    "USER": {
+        "SIGN_UP": {
+            "SUCCESS": {
+                "message": "Registrado correctamente",
+                "code": 0
+            },
+            "EMAIL_ALREADY_EXISTS": {
+                "message": "El email ya existe",
+                "code": 100
+            },
+            "EMPTY_FIELDS": {
+                "message": "Rellena los campos",
+                "code": 101
+            }
+        },
+        "SIGN_IN": {
+            "SUCCESS": {
+                "message": "Inicio de sesion satisfactorio",
+                "code": 0
+            },
+            "EMAIL_NOT_FOUND": {
+                "message": "Email is not found",
+                "code": 200
+            },
+            "WRONG_CREDENTIALS": {
+                "message": "Usuario/Contrasena no validos",
+                "code": 201
+            },
+            "EMPTY_FIELDS": {
+                "message": "Rellena los campos",
+                "code": 202
+            }
+        }
+    }
+}
