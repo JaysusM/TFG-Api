@@ -32,5 +32,27 @@
                 "code": 202
             }
         }
+    },
+    "MEASUREMENT": {
+        "NEW": {
+            "SUCCESS": {
+                "message": "Added new measurement",
+                "code": 0
+            },
+            "EMPTY_FIELDS": {
+                "message": "Fill all the measurement fields",
+                "code": 300
+            }
+        }
+    },
+    "GENERAL": {
+        "COMMON_ERROR": {
+            "message": "Something wrong happened, we are investigating it. Sorry for the inconvenience",
+            "code": 1
+        },
+        "ROUTE_NOT_FOUND": {
+            "message": "That route is not found, check that you didn't mistyped it",
+            "code": 2
+        }
     }
 }

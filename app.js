@@ -4,6 +4,7 @@ var path = require('path');
 require('./utils/db');
 
 var loginRouter = require('./routes/user');
+var measurementRouter = require('./routes/measurement');
 
 var app = express();
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/user', loginRouter);
+app.use('/measurement', measurementRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
