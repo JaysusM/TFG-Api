@@ -15,6 +15,10 @@ const MeasurementSchema = new mongoose.Schema({
         value: {
             type: Number,
             required: true
+        },
+        date: {
+            type: Number,
+            required: true
         }
     }, {collection: 'measurement'}
 )

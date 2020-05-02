@@ -15,6 +15,8 @@ exports.new = (req, res) => {
         res.json(measurementLocale.EMPTY_FIELDS);
     }
 
+    measurement.date = new Date();
+
     Measurement
         .create(measurement)
         .then(newMeasurement => {
