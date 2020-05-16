@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('mongoose-bcrypt');
 
 const UserSchema = new mongoose.Schema({
-        email: {
+        username: {
             type: String,
             lowercase: true,
             trim: true,
@@ -19,6 +19,6 @@ const UserSchema = new mongoose.Schema({
 )
 
 UserSchema.plugin(bcrypt);
-UserSchema.index({ email: 1 });
+UserSchema.index({ username: 1 });
 
 module.exports = mongoose.model('User', UserSchema);

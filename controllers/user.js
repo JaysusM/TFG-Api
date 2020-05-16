@@ -3,13 +3,13 @@ const localeManager = require("../utils/locales/localeManager");
 
 exports.signUp = (req, res) => {
   const data = {
-    email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
   };
 
   const locale = localeManager(req.body.language).USER.SIGN_UP;
 
-  if (!data.email || !data.password) {
+  if (!data.username || !data.password) {
     res.status(500).json(locale.EMPTY_FIELDS);
   }
 
@@ -18,27 +18,28 @@ exports.signUp = (req, res) => {
       res.json(locale.SUCCESS);
     })
     .catch(() => {
-      res.status(500).json(locale.EMAIL_ALREADY_EXISTS);
+      res.status(500).json(locale.USERNAME_ALREADY_EXISTS);
     });
 };
 
 exports.signIn = (req, res) => {
   const data = {
-    email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
   };
 
   const locale = localeManager(req.body.language).USER.SIGN_IN;
 
-  if (!data.email || !data.password) {
+  if (!data.username || !data.password) {
     res.status(500).json(locale.EMPTY_FIELDS);
+    return;
   }
 
   User.findOne({
-    email: data.email,
+    username: data.username,
   }).then((user) => {
     if (!user) {
-      res.status(500).json(locale.EMAIL_NOT_FOUND);
+      res.status(500).json(locale.USERNAME_NOT_FOUND);
     } else {
       user.verifyPassword(data.password, (_, valid) => {
         if (!valid) res.status(500).json(locale.WRONG_CREDENTIALS);

@@ -5,8 +5,8 @@
                 "message": "Registrado correctamente",
                 "code": 0
             },
-            "EMAIL_ALREADY_EXISTS": {
-                "message": "El email ya existe",
+            "USERNAME_ALREADY_EXISTS": {
+                "message": "El nombre de usuario ya existe",
                 "code": 100
             },
             "EMPTY_FIELDS": {
@@ -19,8 +19,8 @@
                 "message": "Inicio de sesion satisfactorio",
                 "code": 0
             },
-            "EMAIL_NOT_FOUND": {
-                "message": "Email is not found",
+            "USERNAME_NOT_FOUND": {
+                "message": "El nombre de usuario no se ha encontrado",
                 "code": 200
             },
             "WRONG_CREDENTIALS": {
@@ -47,7 +47,7 @@
     },
     "GENERAL": {
         "COMMON_ERROR": {
-            "message": "Ups, parece que algo se ha estropeado. Estamos trabajando para arreglarlo, perdona las molestias.",
+            "message": "Ups, parece que algo no funciona correctamente. Estamos trabajando para arreglarlo, perdona las molestias.",
             "code": 1
         },
         "ROUTE_NOT_FOUND": {
