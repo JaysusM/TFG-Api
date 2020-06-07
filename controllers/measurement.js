@@ -4,14 +4,17 @@ const localeManager = require('../utils/locales/localeManager');
 exports.new = (req, res) => {
     const measurement = {
         userId: req.body.userId,
-        coordenates: req.body.coordenates,
+        position: {
+            latitude: req.body.position.latitude,
+            longitude: req.body.position.longitude
+        },
         value: req.body.value
     }
 
     const locale = localeManager(req.body.language);
     const measurementLocale = locale.MEASUREMENT.NEW;
 
-    if (!measurement.userId || !measurement.coordenates || !measurement.value) {
+    if (!measurement.userId || !measurement.position || !measurement.value) {
         res.json(measurementLocale.EMPTY_FIELDS);
     }
 
