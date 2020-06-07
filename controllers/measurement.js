@@ -4,10 +4,7 @@ const localeManager = require('../utils/locales/localeManager');
 exports.new = (req, res) => {
     const measurement = {
         userId: req.body.userId,
-        position: {
-            latitude: req.body.position.latitude,
-            longitude: req.body.position.longitude
-        },
+        position: req.body.position,
         value: req.body.value
     }
 
