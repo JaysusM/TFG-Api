@@ -2,7 +2,7 @@ const Measurement = require("../models/measurement");
 const localeManager = require("../utils/locales/localeManager");
 
 exports.new = (req, res) => {
-  const measurement = {
+  let measurement = {
     userId: req.body.userId,
     position: req.body.position,
     value: req.body.value,
@@ -16,6 +16,7 @@ exports.new = (req, res) => {
   }
 
   measurement.date = new Date();
+  measurement.position = JSON.parse(measurement.position);
 
   Measurement.create(measurement).then((newMeasurement) => {
     if (!newMeasurement) {
